@@ -1,0 +1,99 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" /> 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+
+<div class="jumbotron">
+  <h5 class="display-3 text-center" style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-weight:200;font-size:500%">Add Flights</h5><br>
+  <form action="/admin" method="post">
+    <div class="form-row"> 
+      <div class="form-group col-md-6">
+        <label for="from">Source:</label>
+        <select class="selectpicker form-control show-menu-arrow" data-show-subtext="true" data-live-search="true" name="from">
+          <option>Select...</option>
+          <option data-subtext="DEL">New Delhi</option>
+          <option data-subtext="BOM">Mumbai</option>
+          <option data-subtext="MAA">Chennai</option>
+          <option data-subtext="COK">Kochi</option>
+          <option data-subtext="BLR">Bengaluru</option>
+          <option data-subtext="GOI">Goa</option>
+          <option data-subtext="BBI">Bhubaneswar</option>
+          <option data-subtext="IDR">Indore</option>
+          <option data-subtext="CJB">Coimbatore </option>
+          <option data-subtext="NAG">Nagpur</option>
+          <option data-subtext="SXR">Srinagar</option>
+          <option data-subtext="JAI">Jaipur</option>
+          <option data-subtext="LKO">Lucknow</option>
+          <option data-subtext="TRV">Thiruvananthapuram</option>
+          <option data-subtext="PNQ">Pune</option>
+          <option data-subtext="AMD">Ahemdabad</option>
+          <option data-subtext="HYD">Hyderabad </option>
+          <option data-subtext="CCU">Kolkata</option>
+          <option data-subtext="IXR">Ranchi</option>
+          <option data-subtext="IXZ">Port Blair</option>
+          <option data-subtext="LUH">Ludhiana</option>
+          <option data-subtext="IXC">Chandigarh</option>
+          <option data-subtext="KNU">Kanpur</option>
+          <option data-subtext="DED">Dehradun</option>
+          <option data-subtext="PGH">Pantnagar</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="to">Destination:</label>
+        <select class="selectpicker form-control show-menu-arrow" data-show-subtext="true" data-live-search="true" name="to">
+          <option>Select...</option>
+          <option data-subtext="DEL">New Delhi</option>
+          <option data-subtext="BOM">Mumbai</option>
+          <option data-subtext="MAA">Chennai</option>
+          <option data-subtext="COK">Kochi</option>
+          <option data-subtext="BLR">Bengaluru</option>
+          <option data-subtext="GOI">Goa</option>
+          <option data-subtext="BBI">Bhubaneswar</option>
+          <option data-subtext="IDR">Indore</option>
+          <option data-subtext="CJB">Coimbatore </option>
+          <option data-subtext="NAG">Nagpur</option>
+          <option data-subtext="SXR">Srinagar</option>
+          <option data-subtext="JAI">Jaipur</option>
+          <option data-subtext="LKO">Lucknow</option>
+          <option data-subtext="TRV">Thiruvananthapuram</option>
+          <option data-subtext="PNQ">Pune</option>
+          <option data-subtext="AMD">Ahemdabad</option>
+          <option data-subtext="HYD">Hyderabad </option>
+          <option data-subtext="CCU">Kolkata</option>
+          <option data-subtext="IXR">Ranchi</option>
+          <option data-subtext="IXZ">Port Blair</option>
+          <option data-subtext="LUH">Ludhiana</option>
+          <option data-subtext="IXC">Chandigarh</option>
+          <option data-subtext="KNU">Kanpur</option>
+          <option data-subtext="DED">Dehradun</option>
+          <option data-subtext="PGH">Pantnagar</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row"> 
+      <div class="form-group col-md-6">
+        <label for="date">Date of Journey:</label>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="date" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="time">Time:</label>
+        <input type="time" class="form-control" name="time" required>
+      </div>
+    </div>
+    <div class="form-row"> 
+      <div class="form-group col-md-6">
+        <label for="class">Class:</label>
+        <select class="form-control" name="class">
+          <option selected>Choose Class</option>
+          <option>Economy</option>
+          <option>Business</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="capacity">Capacity:</label>
+        <input type="number" class="form-control" name="capacity" required>
+      </div>
+    </div>
+    <div class="text-center">
+      <button id="gobutton" type="submit" class="submit btn-lg btn-dark">Add</button>
+    </div>
+  </form>
+</div>

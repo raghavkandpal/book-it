@@ -1,0 +1,39 @@
+{{> _sidebar}}
+
+<div class="card card-header mb-2">
+  <div class="row align-items-center">
+    <div class="col-md-10"><b><h5>Flights</h5></b></div>
+    <div class="col-md-2">
+      <a class='btn btn-dark btn-block mb-2' href='/admin/flightcreate'>Add</a>
+    </div>
+  </div>
+</div>
+
+{{#each flight}}
+  <div class="card card-body mb-2">
+    <div class="row align-items-center">
+      <div class="col-md-6"><h5>Flight Number: {{number}}</h5></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-6"><h5>From: {{from}}</h5></div>
+      <div class="col-md-6"><h5>To: {{to}}</h5></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-3">Date: {{date}}</div>
+      <div class="col-md-3">Time of Departure: {{time}}</div>
+    </div>  
+    <div class="row align-items-center">
+      <div class="col-md-3">Class: {{class}}</div>
+      <div class="col-md-3">No. of Seats: {{capacity}}</div>
+      <div class="col-md-2 offset-md-4">
+        <form method="post" action="/admin/{{id}}?_method=DELETE">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" class="btn btn-danger btn-block" value="Delete">
+        </form>
+      </div>
+    </div>
+  </div>
+
+{{else}}
+  <p>No Flights listed</p>
+{{/each}}

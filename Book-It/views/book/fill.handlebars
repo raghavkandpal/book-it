@@ -1,0 +1,59 @@
+{{#each flight}}
+<div class="card card-header mb-2">
+  <div class="row align-items-center">
+    <div class="col-md-6"><h5>Flight Number: {{number}}</h5></div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6"><h5>From: {{from}}</h5></div>
+    <div class="col-md-6"><h5>To: {{to}}</h5></div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6">Date: {{date}}</div>
+    <div class="col-md-6">Time of Departure: {{time}}</div>
+  </div>  
+  <div class="row align-items-center">
+    <div class="col-md-6">Class: {{class}}</div>
+    <div class="col-md-6">Available Seats: {{capacity}}</div>
+  </div>
+</div>
+
+<div class="card card-body mb-2">
+  <form autocomplete="off" action="/book/details" method="POST">
+    <div class="form-row"> 
+      <div class="form-group col-md-6">
+        <label for="name">Name:</label>
+        <input class="form-control" name="name" type="text">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="age">Age:</label>
+        <input type="number" class="form-control" name="age">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="sex">Sex:</label>
+        <select class="form-control" name="sex">
+          <option selected>Choose...</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <input name="from" value="{{from}}" hidden>
+      <input name="to" value="{{to}}" hidden>
+      <input name="date" value="{{date}}" hidden>
+      <input name="time" value="{{time}}" hidden>
+      <input name="class" value="{{class}}" hidden>
+      <input name="capacity" value="{{capacity}}" hidden>
+      <input name="number" value="{{number}}" hidden>
+    </div>
+    <div class="text-center">
+      <button id="gobutton" type="submit" class="submit btn-lg btn-dark">Book</button>
+    </div>
+  </form>
+</div>
+
+
+{{else}}
+  <p>Error</p>
+{{/each}}

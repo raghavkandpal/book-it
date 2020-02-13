@@ -1,0 +1,24 @@
+{{> _sidebar}}
+
+<div class="card card-header mb-2">
+  <h5>Booked Tickets</h5>
+</div>
+
+{{#each book}}
+<div class="card card-body mb-2">
+  <div class="row align-items-center">
+    <div class="col-md-6"><h5>PNR Number: {{pnr}}</h5></div>
+    <div class="col-md-6"><h5>Flight Number: {{number}}</h5></div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6" style="font-size: 110%"><b>Name: {{name}}</b></div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-3">Seat: {{seat}}</div>  
+    <div class="col-md-3">Class: {{class}}</div>  
+  </div>
+</div>
+
+{{else}}
+<p>No tickets booked.</p>
+{{/each}}

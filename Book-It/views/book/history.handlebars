@@ -1,0 +1,42 @@
+<div class="card card-header mb-2">
+  <h5>Booked Tickets</h5>
+</div>
+
+{{#each book}}
+<div class="card card-body mb-2">
+  <div class="row align-items-center">
+    <div class="col-md-6"><h4>Flight Number: {{number}}</h4></div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6"><h5>From: {{from}}</h5></div>
+    <div class="col-md-6"><h5>To: {{to}}</h5></div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6"><b>Name: {{name}}</b></div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6">Age: {{age}}</div>
+    <div class="col-md-6">Sex: {{sex}}</div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6">Date: {{date}}</div>
+    <div class="col-md-6">Time of Departure: {{time}}</div>
+  </div>  
+  <div class="row align-items-center">
+    <div class="col-md-6">Class: {{class}}</div>
+    <div class="col-md-6">Seat Number: {{seat}}</div>
+  </div> 
+  <div class="row align-items-center">
+    <div class="col-md-6">PNR Number: {{pnr}}</div>
+    <div class="col-md-2 offset-md-4">
+      <form method="post" action="/book/history/{{number}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Cancel">
+      </form>
+    </div>
+  </div>
+</div>
+
+{{else}}
+<p>No tickets booked.</p>
+{{/each}}
